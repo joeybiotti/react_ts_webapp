@@ -2,7 +2,8 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
-import Hello from './components/Hello';
+import Hello from './containers/Hello';
+import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { enthusiasm } from './reducers/index';
 import { StoreState } from './types/index';
@@ -13,7 +14,9 @@ const store = createStore<StoreState>(enthusiasm, {
 });
 
 ReactDOM.render(
-  <Hello name = "Typescript" enthusiasmLevel = {10} />,
+  <Provider store={store}>
+    <Hello />
+  </Provider>,
   document.getElementById('root') as HTMLElement
 );
 
