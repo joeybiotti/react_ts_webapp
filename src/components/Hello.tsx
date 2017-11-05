@@ -9,8 +9,8 @@ export interface Props {
 }
 
 function Hello({ name, enthusiasmLevel = 1, onIncrement, onDecrement }: Props) {
-    if(enthusiasmLevel <= 0) {
-        throw new Error ("You could be a little more enthusiastic.");
+    if (enthusiasmLevel <= 0) {
+        throw new Error ('You could be a little more enthusiastic.');
     }
     return(
         <div className="hello">
@@ -28,5 +28,5 @@ function Hello({ name, enthusiasmLevel = 1, onIncrement, onDecrement }: Props) {
 export default Hello; 
 
 function getExclamationMarks(numChars: number) {
-    return Array(numChars + 1).join("!");
+    return Array(numChars + 1).join('!');
 }
